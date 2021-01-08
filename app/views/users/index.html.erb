@@ -1,0 +1,22 @@
+
+<% content_for(:title, "Users") %>
+<h1>Listing <%= pluralize(@users.length, "user") %>  in our Sample App</h1>
+<table>
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+
+    <tbody>
+    <% @users.each do |player| %>
+        <tr>
+            <td><%= player.name %></td>
+            <td><%= player.email %></td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>
+
