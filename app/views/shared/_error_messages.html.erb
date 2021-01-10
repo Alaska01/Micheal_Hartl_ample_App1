@@ -1,14 +1,8 @@
 
-<% if @user.errors.any? %>
-    <div id="error_explanation">
-        <p> The form contains <%= pluralize(@user.errors.count, "error") %> </p>
-    </div>
-<% end %>
-
 <% if flash[:errors] %>
+    
     <% flash[:errors].each do |error| %>
         <p class="text-danger"><%= error %></p>
     <% end %>
 <% end %>
-
 

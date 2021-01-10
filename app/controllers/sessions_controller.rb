@@ -1,0 +1,14 @@
+class SessionsController < ApplicationController
+ 
+
+  def create
+    user = User.find_by(email: params[:email])
+    if user && user.authenticate(params[:password])
+        session[:user_id] = user.id
+        redirect_to users_path
+    else
+        flash[:errors] = ["Invalid combination"]
+        redirect_back(fallback_location:"/")
+    end
+  end
+end

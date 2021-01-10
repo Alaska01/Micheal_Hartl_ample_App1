@@ -1,5 +1,6 @@
 
 <% content_for(:title, "Users") %>
+<%= flash[:success] = "Welcome to the Sample App!" %>
 <h1>Listing <%= pluralize(@users.length, "user") %>  in our Sample App</h1>
 <table>
     <thead>
